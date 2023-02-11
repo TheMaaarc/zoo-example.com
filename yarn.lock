@@ -520,10 +520,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.17.7.tgz#03b231fcfa0702562978979468dfc8b09b55ac59"
   integrity sha512-K9/YybM6WZO71x73Iyab6mwieHtHjm9hrPR/a9FBPZmFO3w+fJaM2uu2rt3JYf/rZR24MFwTliI8VSoKKOtYtg==
 
-"@flyodev/nitrocms@^1.0.0-beta.126":
-  version "1.0.0-beta.126"
-  resolved "https://registry.yarnpkg.com/@flyodev/nitrocms/-/nitrocms-1.0.0-beta.126.tgz#bef9cf0ed5e9fe26a6bee28c39fca022f053ad78"
-  integrity sha512-ZRoKbu2apOgOG1wa7ZZtLx/NHBpsc+xd2jrAavjK+L7b30n3yyouxiTsgRxgAdUypyAmCcpGKQk+aGQUM91onQ==
+"@flyodev/nitrocms@^1.0.0-beta.126-patch6":
+  version "1.0.0-beta.126-patch6"
+  resolved "https://registry.yarnpkg.com/@flyodev/nitrocms/-/nitrocms-1.0.0-beta.126-patch6.tgz#e6757c85c583e7756d49ce6dcd5de114de986ea4"
+  integrity sha512-bVgiD6r3KtKskDIfctMpDwqDgbTaGBBCsePjzOPPKf00McskYnviyWS3KDAXZQ5jl2dYiAQqdbkXadW8GPNJ6w==
   dependencies:
     "@babel/cli" "^7.0.0"
     superagent "^5.3.0"
@@ -1394,9 +1394,9 @@ chownr@^2.0.0:
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 ci-info@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.7.1.tgz#708a6cdae38915d597afdf3b145f2f8e1ff55f3f"
-  integrity sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.8.0.tgz#81408265a5380c929f0bc665d62256628ce9ef91"
+  integrity sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==
 
 cli-cursor@^4.0.0:
   version "4.0.0"
@@ -1832,9 +1832,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.294"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.294.tgz#ad80317b85f0859a9454680fbc1c726fefa7e6fd"
-  integrity sha512-PuHZB3jEN7D8WPPjLmBQAsqQz8tWHlkkB4n0E2OYw8RwVdmBYV0Wn+rUFH8JqYyIRb4HQhhedgxlZL163wqLrQ==
+  version "1.4.295"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.295.tgz#911d5df67542bf7554336142eb302c5ec90bba66"
+  integrity sha512-lEO94zqf1bDA3aepxwnWoHUjA8sZ+2owgcSZjYQy0+uOSEclJX0VieZC+r+wLpSxUHRd6gG32znTWmr+5iGzFw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"

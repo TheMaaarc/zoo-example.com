@@ -1,4 +1,4 @@
-import { ApiClient, ConfigApi, PagesApi } from '@flyodev/nitrocms'
+import { ApiClient, ConfigApi, PagesApi, EntitiesApi, SitemapApi } from '@flyodev/nitrocms'
 
 export default defineNuxtPlugin(nuxtApp => {
   const config = useRuntimeConfig()
@@ -12,7 +12,9 @@ export default defineNuxtPlugin(nuxtApp => {
   return {
     provide: {
       configApi: new ConfigApi,
-      pagesApi: new PagesApi
+      pagesApi: new PagesApi,
+      entitiesApi: new EntitiesApi,
+      sitemapApi: new SitemapApi
     }
   }
 })
