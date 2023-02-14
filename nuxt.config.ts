@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      TOKEN: process.env.TOKEN || 'error'
+      TOKEN: process.env.TOKEN || 'error',
+      ENV: process.env.NODE_ENV
     }
   }
 })

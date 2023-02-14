@@ -1,17 +1,16 @@
-import { ApiClient, ConfigApi, PagesApi, EntitiesApi, SitemapApi } from '@flyodev/nitrocms'
+import { ApiClient, ConfigApi, PagesApi, EntitiesApi, SitemapApi, ContentApi } from '@flyodev/nitrocms'
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
   
   var defaultClient = ApiClient.instance;
-
-  //defaultClient.basePath = 'http://flyoapi-web-api.dev.heartbeat.gmbh:7171/nitro'
-  
   defaultClient.defaultHeaders = {}
   
   var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
   ApiKeyAuth.apiKey = config.public.TOKEN
-  const route = useRoute()
+  
+  const contentApi = new ContentApi
+  
   return {
     provide: {
       flyo : {
@@ -19,23 +18,28 @@ export default defineNuxtPlugin(() => {
         pagesApi: new PagesApi,
         entitiesApi: new EntitiesApi,
         sitemapApi: new SitemapApi,
-        isEditable: route.query?.token && (process.env.NODE_ENV === 'preview' || process.env.NODE_ENV === 'development') ? true : false, // (process.env.NODE_ENV === 'preview' || process.env.NODE_ENV === 'development')
+        contentApi: contentApi,
+        isEditable: () => {
+          const route = useRoute()
+          const token = route.query?.token || false
+          if (token && (process.env.NODE_ENV === 'preview' || process.env.NODE_ENV === 'development')) {
+            return true
+          }
+
+          return false
+        },
         updateContent(newValue, contentIdentifier, uid, pageId) {
           const route = useRoute()
-
-          const requestOptions = {
-              method: 'PUT',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                value: newValue,
-                identifier: contentIdentifier,
-                uid: uid,
-                token: route.query.token
-              })
-          };
-          fetch(defaultClient.basePath + '/content/' + pageId + '?token=' + ApiKeyAuth.apiKey, requestOptions)
-              .then(response => response.json())
-              .then(data => console.log(data));
+          contentApi.putContent(pageId, {
+            value: newValue,
+            identifier: contentIdentifier,
+            uid: uid,
+            token: route.query.token
+          }).then((resp) => {
+            console.log(resp)
+          }, (error) => {
+            console.error(error)
+          })
         }
       }
     },
