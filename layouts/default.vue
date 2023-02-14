@@ -69,7 +69,7 @@ export default {
     config: false
   }),
   async created() {
-    this.config = await this.$configApi.config()
+    this.config = await this.$flyo.configApi.config()
   },
 }
 </script>

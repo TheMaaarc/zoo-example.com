@@ -22,7 +22,7 @@ export default {
     sitemap: []
   }),
   async created() {
-    this.sitemap = await this.$sitemapApi.sitemap()
+    this.sitemap = await this.$flyo.sitemapApi.sitemap()
   },
 };
 </script>

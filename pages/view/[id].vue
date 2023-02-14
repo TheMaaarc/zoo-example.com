@@ -19,7 +19,7 @@ export default {
     data: false,
   }),
   async created() {
-    this.data = await this.$entitiesApi.entity(this.$route.params.id)
+    this.data = await this.$flyo.entitiesApi.entity(this.$route.params.id)
 
     // uncomment if
     // fetch(this.data.entity.entity_metric.api)

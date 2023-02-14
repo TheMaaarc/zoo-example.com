@@ -10,7 +10,7 @@ export default {
     page: false,
   }),
   async created() {
-    this.page = await this.$pagesApi.home()
+    this.page = await this.$flyo.pagesApi.home()
   },
 };
 </script>
