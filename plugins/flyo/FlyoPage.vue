@@ -3,7 +3,13 @@
         <slot
             v-if="page"
             v-bind="page"
-        ></slot>
+        >
+            <FlyoComponent
+                v-for="item in page.json"
+                :key="item.uid"
+                :item="item"
+            />
+        </slot>
     </div>
 </template>
 
