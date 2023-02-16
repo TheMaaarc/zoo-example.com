@@ -8,7 +8,7 @@
       :content="item.content"
       :items="item.items"
       :slots="item.slots"
-      :is-editable="isEditable"
+      :is-editable="isEditAllowed"
       @update="updateReference($event, item)"
     />
   </div>
@@ -23,8 +23,8 @@ export default {
     }
   },
   computed: {
-    isEditable() {
-      return this.$flyo.isEditable()
+    isEditAllowed() {
+      return this.$flyo.isEditAllowed()
     }
   },
   methods: {

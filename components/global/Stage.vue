@@ -1,14 +1,16 @@
 <template>
-  <div class="container" v-html="content.content" />
+    <div>
+        <strong>Stage</strong><br />
+        Config: {{ config }}<br />
+        Content: {{ content }}<br />
+        Items: {{ items }}<br />
+        Slots: {{ slots }}
+    </div>
 </template>
 
 <script>
 export default {
   props: {
-    isEditAllowed: {
-      type: Boolean,
-      default: true,
-    },
     config: {
       type: Object,
       default: () => {}

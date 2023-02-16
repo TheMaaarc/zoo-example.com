@@ -1,16 +1,13 @@
 <template>
-  <page-loader v-if="page" :page="page" />
+    <FlyoPage home v-slot="{ json }">
+        <FlyoComponent
+            v-for="item in json"
+            :key="item.uid"
+            :item="item"
+        />
+    </FlyoPage>
 </template>
 
 <script>
-import PageLoader from '~~/components/PageLoader.vue'
-export default {
-  components: { PageLoader },
-  data:() => ({
-    page: false,
-  }),
-  async created() {
-    this.page = await this.$flyo.pagesApi.home()
-  },
-};
+export default {}
 </script>
